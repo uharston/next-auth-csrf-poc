@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Sample</h1>
+        <a href="http://localhost:4200/api/auth/csrf">See CSRF Token</a>
+        <a href="http://localhost:4200/api/auth/providers">See Providers</a>
+        <a href="http://localhost:4200/api/auth/signin">Sign In Without Cookie</a>
+
+      
+        <div class="provider">
+            <form id='csrf-form' action="http://localhost:4200/api/auth/signin/azureb2c" method="POST" accept="*" >
+                <input id='csrf-input' type="hidden" name="csrfToken"  />
+                <input type="hidden" name="callbackUrl" value="http://localhost:4200" />
+                <!-- <input type="hidden" name="json" value="true" /> -->
+                <!-- <button id='submit-btn'type="submit" class="button">Sign in with Azure B2C</button> -->
+            </form>
+
+            <p id="cookie"></p>
+
+        
+            <button id='signin-btn'>Sign In</button>
+            <button id='cookie-btn'>Generate Cookie via Axios</button>
+
+        </div>
+    </div>
+</body>
+<script src="sample.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</html>
